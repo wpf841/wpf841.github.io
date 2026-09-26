@@ -44,14 +44,23 @@
       margin-bottom: 1.25rem;
     }
     h1 { font-size: 2.2rem; margin-bottom: 0.6rem; }
-    .affiliation { font-size: 1.02rem; color: rgba(255, 255, 255, 0.85); margin-bottom: 1rem; }
     .bio {
       font-size: 1rem;
       line-height: 1.9;
       color: rgba(255, 255, 255, 0.8);
       max-width: 640px;
-      margin: 0 auto;
+      margin: 0 auto 1.5rem;
     }
+    .links { display: flex; gap: 0.9rem; flex-wrap: wrap; justify-content: center; }
+    .links a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.55rem 1.4rem;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 999px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .links a:hover { background: #fff; color: #203a43; }
 
     section { margin-bottom: 2.5rem; }
     h2 {
@@ -60,6 +69,27 @@
       margin-bottom: 1.25rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 1.1rem 1.4rem;
+    }
+    .info-row { display: flex; gap: 0.75rem; padding: 0.4rem 0; font-size: 0.98rem; }
+    .info-label { flex: 0 0 120px; font-weight: 600; color: rgba(255, 255, 255, 0.65); }
+    .info-value { color: rgba(255, 255, 255, 0.9); }
+
+    .interests ul { list-style: none; }
+    .interests li {
+      position: relative;
+      padding: 0.3rem 0 0.3rem 1.5rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .interests li::before { content: "▸"; position: absolute; left: 0.25rem; color: rgba(255, 255, 255, 0.5); }
+
     .project {
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.12);
@@ -72,21 +102,11 @@
     .project h3 a:hover { text-decoration: underline; }
     .project p { font-size: 0.95rem; line-height: 1.8; color: rgba(255, 255, 255, 0.78); }
 
-    .links { display: flex; gap: 0.9rem; flex-wrap: wrap; justify-content: center; }
-    .links a {
-      color: #fff;
-      text-decoration: none;
-      padding: 0.55rem 1.4rem;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      border-radius: 999px;
-      transition: background 0.2s, color 0.2s;
-    }
-    .links a:hover { background: #fff; color: #203a43; }
-    .email-line { text-align: center; margin-top: 1.2rem; font-size: 0.95rem; }
-    .email-line a { color: rgba(255, 255, 255, 0.75); text-decoration: none; }
-    .email-line a:hover { color: #fff; text-decoration: underline; }
-
     footer { text-align: center; margin-top: 3rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); }
+
+    @media (max-width: 520px) {
+      .info-row { flex-direction: column; gap: 0.15rem; }
+    }
   </style>
 </head>
 <body class="en">
@@ -96,21 +116,71 @@
     <header class="hero">
       <img class="avatar" src="https://github.com/wpf841.png" alt="Peifan Wu">
       <h1>Peifan Wu</h1>
-      <p class="affiliation">
-        <span class="lang-zh">华东师范大学 · 软件工程专业全日制硕士在读</span>
-        <span class="lang-en">Full-time Master's student in Software Engineering, East China Normal University</span>
-      </p>
       <p class="bio">
-        <span class="lang-zh">欢迎来到我的个人主页！我目前就读于华东师范大学，攻读全日制软件工程硕士学位，热衷于机器人与开源硬件相关项目。</span>
-        <span class="lang-en">Welcome to my personal homepage! I am currently pursuing a full-time Master's degree in Software Engineering at East China Normal University, with a strong interest in robotics and open-source hardware projects.</span>
+        <span class="lang-zh">欢迎来到我的个人主页！我目前就读于华东师范大学，攻读全日制软件工程硕士学位。</span>
+        <span class="lang-en">Welcome to my personal homepage! I am currently pursuing a full-time Master's degree in Software Engineering at East China Normal University.</span>
       </p>
+      <nav class="links">
+        <a href="https://github.com/wpf841" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:51285902138@stu.ecnu.edu.cn">
+          <span class="lang-zh">邮箱</span><span class="lang-en">Email</span>
+        </a>
+      </nav>
     </header>
+
+    <section>
+      <h2>
+        <span class="lang-zh">🎓 教育背景</span>
+        <span class="lang-en">🎓 Education &amp; Current Position</span>
+      </h2>
+      <div class="info-card">
+        <div class="info-row">
+          <span class="info-label">
+            <span class="lang-zh">学位</span>
+            <span class="lang-en">Degree</span>
+          </span>
+          <span class="info-value">
+            <span class="lang-zh">软件工程专业 硕士（全日制在读）</span>
+            <span class="lang-en">Master's in Software Engineering (full-time, in progress)</span>
+          </span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">
+            <span class="lang-zh">学校</span>
+            <span class="lang-en">Institution</span>
+          </span>
+          <span class="info-value">
+            <span class="lang-zh">华东师范大学</span>
+            <span class="lang-en">East China Normal University</span>
+          </span>
+        </div>
+        <!-- 如需时间线，可在此添加一行，例如 2025.09 – Present / 至今 -->
+      </div>
+    </section>
+
+    <!-- 研究方向为草稿，可按实际情况修改 -->
+    <section class="interests">
+      <h2>
+        <span class="lang-zh">🔬 研究兴趣</span>
+        <span class="lang-en">🔬 Research Interests</span>
+      </h2>
+      <ul>
+        <li>
+          <span class="lang-zh">机器人与开源硬件</span>
+          <span class="lang-en">Robotics &amp; open-source hardware</span>
+        </li>
+        <li>
+          <span class="lang-zh">机械臂遥操作与模仿学习</span>
+          <span class="lang-en">Teleoperation &amp; imitation learning with robotic arms</span>
+        </li>
+      </ul>
+    </section>
 
     <!-- 项目描述为草稿，可按实际情况修改 -->
     <section>
       <h2>
-        <span class="lang-zh">项目经历</span>
-        <span class="lang-en">Projects</span>
+        <span class="lang-zh">💻 开源项目</span>
+        <span class="lang-en">💻 Open Source Projects</span>
       </h2>
 
       <article class="project">
@@ -128,29 +198,6 @@
           <span class="lang-en">An open-source humanoid arm project. Involved in mechanical assembly and joint control debugging, and gained hands-on experience with its software and hardware architecture.</span>
         </p>
       </article>
-
-      <article class="project">
-        <h3><span class="lang-zh">更多项目</span><span class="lang-en">More Projects</span></h3>
-        <p>
-          <span class="lang-zh">更多项目经验正在整理中，敬请期待。</span>
-          <span class="lang-en">More project experience is on the way. Stay tuned.</span>
-        </p>
-      </article>
-    </section>
-
-    <section>
-      <h2>
-        <span class="lang-zh">联系方式</span>
-        <span class="lang-en">Contact</span>
-      </h2>
-      <nav class="links">
-        <a href="https://github.com/wpf841" target="_blank" rel="noopener">GitHub</a>
-        <!-- 注册 OpenReview 后，把下面的链接换成你的个人资料页地址 -->
-        <a href="https://openreview.net/profile?id=~Peifan_Wu1" target="_blank" rel="noopener">OpenReview</a>
-      </nav>
-      <p class="email-line">
-        <a href="mailto:51285902138@stu.ecnu.edu.cn">51285902138@stu.ecnu.edu.cn</a>
-      </p>
     </section>
 
     <footer>© 2026 Peifan Wu · Hosted on GitHub Pages</footer>
