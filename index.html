@@ -61,6 +61,9 @@
       transition: background 0.2s, color 0.2s;
     }
     .links a:hover { background: #fff; color: #203a43; }
+    .email-line { margin-top: 1.2rem; font-size: 0.95rem; }
+    .email-line a { color: rgba(255, 255, 255, 0.75); text-decoration: none; }
+    .email-line a:hover { color: #fff; text-decoration: underline; }
 
     section { margin-bottom: 2.5rem; }
     h2 {
@@ -126,6 +129,9 @@
           <span class="lang-zh">邮箱</span><span class="lang-en">Email</span>
         </a>
       </nav>
+      <p class="email-line">
+        <a href="mailto:51285902138@stu.ecnu.edu.cn">51285902138@stu.ecnu.edu.cn</a>
+      </p>
     </header>
 
     <section>
@@ -154,7 +160,16 @@
             <span class="lang-en">East China Normal University</span>
           </span>
         </div>
-        <!-- 如需时间线，可在此添加一行，例如 2025.09 – Present / 至今 -->
+        <div class="info-row">
+          <span class="info-label">
+            <span class="lang-zh">入学时间</span>
+            <span class="lang-en">Timeline</span>
+          </span>
+          <span class="info-value">
+            <span class="lang-zh">2025年9月 – 至今</span>
+            <span class="lang-en">Sept 2025 – Present</span>
+          </span>
+        </div>
       </div>
     </section>
 
@@ -164,16 +179,18 @@
         <span class="lang-zh">🔬 研究兴趣</span>
         <span class="lang-en">🔬 Research Interests</span>
       </h2>
-      <ul>
-        <li>
-          <span class="lang-zh">机器人与开源硬件</span>
-          <span class="lang-en">Robotics &amp; open-source hardware</span>
-        </li>
-        <li>
-          <span class="lang-zh">机械臂遥操作与模仿学习</span>
-          <span class="lang-en">Teleoperation &amp; imitation learning with robotic arms</span>
-        </li>
-      </ul>
+      <div class="info-card">
+        <ul>
+          <li>
+            <span class="lang-zh">机器人与开源硬件</span>
+            <span class="lang-en">Robotics &amp; open-source hardware</span>
+          </li>
+          <li>
+            <span class="lang-zh">机械臂遥操作与模仿学习</span>
+            <span class="lang-en">Teleoperation &amp; imitation learning with robotic arms</span>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- 项目描述为草稿，可按实际情况修改 -->
